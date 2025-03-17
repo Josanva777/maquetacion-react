@@ -4,29 +4,102 @@
   padding: 0;
 }
 
+.contenedor-principal {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 25px auto;
+  width: 90%;
+  height: 90vh;
+}
+
 .fondo {
-  background-color: #8A9DF2; /* Azul claro del diseño */
-  width: 40%; /* Ajustado para que las dos cuadrículas quepan */
-  height: 90vh; /* Altura ajustada para las 3 filas */
+  background-color: #8A9DF2;
+  border: 3px solid black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+}
+
+.fila {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* Columna izquierda más ancha para rosas, derecha para naranjas */
-  grid-template-rows: 1fr 1fr 1fr; /* Tres filas de igual altura */
   gap: 10px;
-  padding: 10px;
-  border: solid 3px black;
-  margin: 30px;
+  height: 30vh;
+}
+
+.fila1 {
+  grid-template-columns: 2fr 1fr;
+}
+.fila3 {
+  grid-template-columns: 2fr 1fr;
+}
+
+.fila2 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.fila1-espejo {
+  grid-template-columns: 1fr 2fr;
+}
+.fila2-espejo {
+  grid-template-columns: 2fr 1fr;
+}
+.fila3-espejo {
+  grid-template-columns: 1fr 2fr;
+}
+
+.cuadroRosa, .cuadroNaranja {
+  border: 3px solid black;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: slideUp 0.5s ease-out forwards;
+  transition: all 0.3s ease;
 }
 
 .cuadroRosa {
-  background-color: #FFC1CC; /* Rosa exacto del diseño */
-  border: solid 3px black;
-  width: 100%; /* Ocupa toda la celda de 2fr */
-  height: 100%; /* Ocupa toda la altura de la fila */
+  background-color: #FFC1CC;
 }
 
 .cuadroNaranja {
-  background-color: #FFA500; /* Naranja exacto del diseño */
-  border: solid 3px black;
-  width: 100%; /* Ocupa toda la celda de 1fr */
-  height: 100%; /* Ocupa toda la altura de la fila */
+  background-color: #FFA500;
+}
+
+.cuadroRosa:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
+  background-color: #ff99b3;
+}
+
+.cuadroNaranja:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
+  background-color: #ff8c00; 
+}
+
+
+.fondo:nth-child(1) .fila1 .cuadroRosa { animation-delay: 0.2s; }
+.fondo:nth-child(1) .fila1 .cuadroNaranja { animation-delay: 0.4s; }
+.fondo:nth-child(1) .fila2 .cuadroRosa { animation-delay: 0.6s; }
+.fondo:nth-child(1) .fila2 .cuadroNaranja { animation-delay: 0.8s; }
+.fondo:nth-child(1) .fila3 .cuadroRosa { animation-delay: 1.0s; }
+.fondo:nth-child(1) .fila3 .cuadroNaranja { animation-delay: 1.2s; }
+
+
+.fondo:nth-child(2) .fila1-espejo .cuadroNaranja { animation-delay: 0.2s; }
+.fondo:nth-child(2) .fila1-espejo .cuadroRosa { animation-delay: 0.4s; }
+.fondo:nth-child(2) .fila2-espejo .cuadroRosa { animation-delay: 0.6s; }
+.fondo:nth-child(2) .fila2-espejo .cuadroNaranja { animation-delay: 0.8s; }
+.fondo:nth-child(2) .fila3-espejo .cuadroNaranja { animation-delay: 1.0s; }
+.fondo:nth-child(2) .fila3-espejo .cuadroRosa { animation-delay: 1.2s; }
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
