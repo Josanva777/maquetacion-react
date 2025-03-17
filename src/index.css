@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.fondo {
+  background-color: #8A9DF2; /* Azul claro del diseño */
+  width: 40%; /* Ajustado para que las dos cuadrículas quepan */
+  height: 90vh; /* Altura ajustada para las 3 filas */
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Columna izquierda más ancha para rosas, derecha para naranjas */
+  grid-template-rows: 1fr 1fr 1fr; /* Tres filas de igual altura */
+  gap: 10px;
+  padding: 10px;
+  border: solid 3px black;
+  margin: 30px;
+}
+
+.cuadroRosa {
+  background-color: #FFC1CC; /* Rosa exacto del diseño */
+  border: solid 3px black;
+  width: 100%; /* Ocupa toda la celda de 2fr */
+  height: 100%; /* Ocupa toda la altura de la fila */
+}
+
+.cuadroNaranja {
+  background-color: #FFA500; /* Naranja exacto del diseño */
+  border: solid 3px black;
+  width: 100%; /* Ocupa toda la celda de 1fr */
+  height: 100%; /* Ocupa toda la altura de la fila */
+}
